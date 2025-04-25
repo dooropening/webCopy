@@ -1,0 +1,32 @@
+{
+  // ===== Python 解释器 & 虚拟环境 =====
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe", // 优先使用项目内的 .venv
+  "python.venvPath": "${workspaceFolder}/.venv", // 明确指定 venv 路径
+  "python.terminal.activateEnvironment": true, // 终端自动激活虚拟环境
+
+  // ===== Python 开发配置 =====
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit" // 保存时自动整理 import
+    }
+  },
+  "python.linting.enabled": true,
+  "python.linting.ruffEnabled": true, // 使用 Ruff 替代 Pylint
+  "python.linting.pylintEnabled": false,
+  "python.testing.pytestEnabled": true, // 启用 pytest（可选）
+
+  // ===== 项目文件排除 =====
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
+    "**/.pytest_cache": true
+  },
+
+  // ===== Git 相关 =====
+  "git.ignoreLimitWarning": true, // 忽略 Git 文件数警告
+  "git.autofetch": true // 自动拉取最新变更
+}
